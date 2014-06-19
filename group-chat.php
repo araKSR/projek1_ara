@@ -35,6 +35,18 @@
 .other{
 	text-align:left;
 }
+.genap {
+	text-align:left;
+	display:block;
+	background:green;
+	color:white;
+}
+.ganjil {
+	text-align:left;
+	display:block;
+	background:yellow;
+	color:white;
+}
 </style>
 <body>
 	<center>
@@ -66,22 +78,37 @@
 						</div>
 						<?php
 						
-						}else if($data['pengirim']!=$_SESSION['email']){
-							
-						?>
-						<div class="other">
-							<div>
-								<strong>
-									<?php echo $data['pengirim']; ?>
-								</strong>
-									<?php echo $data['waktu_kirim']; ?>
-							</div>						
-							<div>
-								<?php echo $data['pesan']; ?>
-							</div>					
-						</div>
-						<?php
+						}else {
+							if ($data['id_chating_personal']%2 == 0){
+								?>
+								<div class="genap">
+									<div>
+										<strong>
+											<?php echo $data['pengirim']; ?>
+										</strong>
+											<?php echo $data['waktu_kirim']; ?>
+									</div>						
+									<div>
+										<?php echo $data['pesan']; ?>
+									</div>					
+								</div>
+							<?php
+						}else{
+							?>
+							<div class="ganjil">
+									<div>
+										<strong>
+											<?php echo $data['pengirim']; ?>
+										</strong>
+											<?php echo $data['waktu_kirim']; ?>
+									</div>						
+									<div>
+										<?php echo $data['pesan']; ?>
+									</div>					
+							</div>
+					<?php
 						}
+					}
 					}
 				}
 					?>

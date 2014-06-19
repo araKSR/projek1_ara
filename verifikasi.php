@@ -36,7 +36,7 @@ if (mysqli_num_rows($query) == 1) {
 	$_SESSION['email'] = $username;
 	
 	//redirect ke halaman index
-	header('location:personal.php')or die (mysqli_error($koneksi));
+	header('location:index-all.php')or die (mysqli_error($koneksi));
 } else {
 	//kalau username ataupun password tidak terdaftar di database
 	header('location:formlogin.php?error=4');
